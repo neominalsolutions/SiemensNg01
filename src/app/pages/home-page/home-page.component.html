@@ -1,0 +1,40 @@
+<p>
+  {{title}}
+</p>
+<!-- two way binding -->
+<input [(ngModel)]="title" placeholder="1.kullanım">
+
+<input [ngModel]="title" (ngModelChange)="onModelChange($event)" placeholder="2.kullanım" />
+
+<input [ngModel]="title" (ngModelChange)="title=$event" placeholder="3.kullanım" />
+
+<!-- model binding -->
+
+<button (click)="onClick($event)">Click Me</button>
+
+<input type="checkbox" [(ngModel)]="visible" /> Göster / Gizle
+
+<!-- *ngIf angular tarafında structural yapısal bir directive elementin doma üzerinde görünmesi veyda domdan kaldırılması için kulanılır. -->
+<!-- yani dom üzerinden yapısal değişikliğe sahip olan directivlere * ifadesi ile başlar. -->
+<br>
+<!-- remove append -->
+{{visible ? 'seçili':'seçim yok'}}
+<p *ngIf="visible">
+  P Elementi
+</p>
+<!-- display:none -->
+<p [hidden]="!visible">
+  P2 Elementi
+</p>
+
+<!-- event binding -->
+<!-- comment için ctrl + k + c -->
+
+<!-- sayfalar arası yönlendirme işlemlerini bu directive yönetiyor. -->
+
+<br>
+<a routerLink="about">Hakkımızda</a>
+&nbsp;
+<a routerLink="contact">İletişim</a>
+&nbsp;
+<a href="https://www.google.com">Google</a>

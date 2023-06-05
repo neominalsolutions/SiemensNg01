@@ -1,0 +1,20 @@
+<header class="container">
+  <h3>
+    App Header
+  </h3>
+</header>
+<nav>
+  <a routerLink="home">Anasayfa</a>
+  <a routerLink="about">Hakkımızda</a>
+  <a routerLink="contact">İletişim</a>
+  <a routerLink="admin">Admin Page</a>
+</nav>
+<main>
+  <!-- buradaki router link ise Main Layout içerisine children olarak tanımlanmış sayfalar arasındaki geçişi sağlar. -->
+  <router-outlet></router-outlet>
+</main>
+
+<footer
+  [ngStyle]="{'position':'fixed', 'bottom':'0','text-align':'center', 'padding':'5px', 'background-color':'purple', 'width':'100%','color':'white'}">
+  Alt Bilgi
+</footer>

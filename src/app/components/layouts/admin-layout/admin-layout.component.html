@@ -1,0 +1,16 @@
+<header [ngClass]="isDarkTheme ? 'bg-dark':'bg-light'">
+  <h3>Admin Layout</h3>
+  <button (click)="changeBgColor()">Bg Theme</button>
+</header>
+<nav [ngStyle]="{
+  'display':'flex',
+  'background-color':'purple',
+  'color':'white','padding':'5px'}">
+  <a [ngStyle]="{'color':'white','text-decoration':'none'}" routerLink="users">Users</a>
+</nav>
+<main>
+  <p [style.color]="'red'" [style.padding]="'5px'" [style.textDecoration]="'underline'">sadsadsad</p>
+  <router-outlet></router-outlet>
+</main>
+
+<!-- 3 farklı attribute directive, attribute directiveler yapısal değildir. sadece elementin görünümüne müdahale etmemiz sağlar. [ngStyle] [ngClass] [hidden], [style.className] -->
