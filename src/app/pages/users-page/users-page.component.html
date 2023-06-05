@@ -1,8 +1,17 @@
 <!-- *ngFor directive ile model length kadar sayfaya dinamik olarak element ekleyebiliriz. -->
-<select [(ngModel)]="sortType">
+<label>Sıralama Yap </label> &nbsp;
+<!-- <select [(ngModel)]="sortType">
+  <option value="asc">[A-Z]</option>
+  <option value="desc">[Z-A]</option>
+</select> -->
+
+<!-- model deki değişimi ts dosyasından takip edemediğimiz caselerde bu durumda eventler ile ilgili operasyonları yapıyoruz. -->
+<select (change)="onSortChange($event)">
   <option value="asc">[A-Z]</option>
   <option value="desc">[Z-A]</option>
 </select>
+
+sıralamaTipi : {{sortType}}
 
 <div [ngSwitch]="sortType">
   <div *ngSwitchCase="'asc'">
@@ -15,6 +24,7 @@
     API dan gelen hali ile sıralar
   </div>
 </div>
+
 
 <table [style.width]="'100%'">
   <thead>
