@@ -5,6 +5,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { MainLayoutComponent } from './components/layouts/main-layout/main-layout.component';
 import { AdminLayoutComponent } from './components/layouts/admin-layout/admin-layout.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { UsersPageComponent } from './pages/users-page/users-page.component';
 
 // sayfalar arası yönlendirme kurallarını yazdığımız dosya
 const routes: Routes = [
@@ -25,7 +26,12 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
-    children: [],
+    children: [
+      {
+        path: 'users',
+        component: UsersPageComponent,
+      },
+    ],
   },
 ];
 

@@ -1,0 +1,36 @@
+<!-- *ngFor directive ile model length kadar sayfaya dinamik olarak element ekleyebiliriz. -->
+<select [(ngModel)]="sortType">
+  <option value="asc">[A-Z]</option>
+  <option value="desc">[Z-A]</option>
+</select>
+
+<div [ngSwitch]="sortType">
+  <div *ngSwitchCase="'asc'">
+    Isme göre A dan Z ye sıralar
+  </div>
+  <div *ngSwitchCase="'desc'">
+    Isme göre Z den A ya sıralar
+  </div>
+  <div *ngSwitchDefault>
+    API dan gelen hali ile sıralar
+  </div>
+</div>
+
+<table [style.width]="'100%'">
+  <thead>
+    <tr>
+      <th>Ad</th>
+      <th>Soyad</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users2">
+      <td>{{user.name}}</td>
+      <td>{{user.surname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phoneNumber}}</td>
+    </tr>
+  </tbody>
+</table>
